@@ -18,3 +18,13 @@
 ### 首页
 ![首页](https://github.com/wang-man/h5-webApp/blob/master/images/2.png)
 ----------
+
+### 图表canvas页
+![其他](https://github.com/wang-man/h5-webApp/blob/master/images/3.png)
+----------
+
+![其他](https://github.com/wang-man/h5-webApp/blob/master/images/4.png)
+----------
+
+![其他](https://github.com/wang-man/h5-webApp/blob/master/images/5.png)
+----------
