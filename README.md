@@ -13,8 +13,8 @@
  
 ### 初始百分比加载
 
-![加载动画](https://github.com/wang-man/h5-webApp/blob/master/images/QQ%E6%88%AA%E5%9B%BE20171207155800.png://github.com/wang-man/eeee/blob/master/2.jpg)
+![加载动画](https://github.com/wang-man/h5-webApp/blob/master/images/QQ截图20171207155800.png://github.com/wang-man/eeee/blob/master/2.jpg)
 ----------
 ### 首页
-![首页](https://github.com/wang-man/eeee/blob/https://github.com/wang-man/h5-webApp/blob/master/images/QQ%E6%88%AA%E5%9B%BE20171207155836.png/2.jpg)
+![首页](https://github.com/wang-man/eeee/blob/https://github.com/wang-man/h5-webApp/blob/master/images/QQ截图20171207155836.png/2.jpg)
 ----------
