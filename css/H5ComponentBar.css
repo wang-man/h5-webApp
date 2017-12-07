@@ -1,0 +1,10 @@
+/* 柱状组件样式 */
+.h5_componentbar .line{height: 20px; margin-bottom: 15px;}
+.h5_componentbar .name{width: 65px; height: 100%; display: inline-block; vertical-align: bottom;}
+.h5_componentbar .process{ height: 100%; display: inline-block; vertical-align: bottom; margin-right: 5px;}
+.h5_componentbar .bg{width: 0; height: 100%; border-radius: 3px;}/*初始为0*/
+.h5_component_enter .bg{transition: all 1s .5s; width: 100%;}/*0.5是为了在组件进入之后*/
+.h5_component_leave .bg{ width: 0; }
+.h5_componentbar .rate{display: inline-block; height: 20px; line-height: 20px; vertical-align: bottom;opacity: 0;}/*初始为0*/
+.h5_component_enter .rate{transition: all 1s 1.5s; opacity: 1;}/*延迟1.5s动画*/
+.h5_component_leave .rate{ opacity: 0; }

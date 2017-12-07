@@ -1,0 +1,6 @@
+/* 折线图组件样式 */
+.h5_componentPolyline canvas{ position: absolute; left: 0; top: 0; width: 100%;height: 100%;}
+.project{ position: absolute; bottom: -20px; left: 50%;}
+.project .text{ display: inline-block; text-align: center; transition: all 1s 1.8s; opacity: 0; font-size: 12px;}
+.h5_component_enter .project .text{ opacity: 1; }/*项目名称的动画*/
+.h5_component_leave .project .text{ opacity: 0; }/*项目名称的动画*/

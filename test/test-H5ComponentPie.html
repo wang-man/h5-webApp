@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>IT教育网2015课程学习情况</title>
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone{
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+
+    <!-- 引入饼图的资源 -->
+    <script type="text/javascript" src="../js/H5ComponentPie.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentPie.css">
+
+    <body>
+        <!-- 用于开发测试 H5ComponentPie 对象（饼图组件） -->
+        <div class="iphone">
+
+        </div>
+
+        <script type="text/javascript">
+            var cfg = {
+                type: "Pie",
+                data: [
+                    ["java", 45, "#ff3030"],
+                    ["php", 2, "#03a9f4"],
+                    ["python", 3, "#db0bff"],
+                    ["ruby", 25, "#ffc107"],
+                    ["javascript", 25, "#aac107"]
+                ],
+                center:true,
+                css: {width:400/2, height:400/2,marginLeft:-400/4,top:"20%"},
+                animateIn: {top: "20%", opacity: 1},
+                animateOut: {top: "-20%", opacity: 0}
+            };
+
+            var h5 = new H5ComponentPie("PieComponent", cfg);
+            $(function() {
+                $('.iphone').append(h5);
+
+                var leave = true;
+                $('body').click(function(event) {
+                    leave = !leave;     //留意这个技巧
+                    $('.h5_component').trigger(leave ? "leave" : "enter");
+                }).click();
+            })
+
+
+        </script>
+
+    </body>
+
+</html>

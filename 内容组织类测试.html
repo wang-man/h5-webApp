@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title></title>
+
+    <!-- 载入所有的组件资源 -->
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.fullPage.js"></script>
+    <!-- H5对象资源&管理内容 ：页——组件-->
+    <script type="text/javascript" src="script/H5.js"></script>
+    <style type="text/css">
+        *{ padding: 0; margin: 0;}
+        body{ background: #aaa; }
+       
+    </style>
+   
+</head>
+    
+    <body>
+   <!-- 内容组织管理，有可能会加载若干个资源 -->
+    <script type="text/javascript">
+        $(function() {
+            var h5 = new H5();
+            h5.addPage("face","首页")     //链式调用
+            .addPage("desc","核心理念页")
+            .addPage("page-3","课程分布方向页")
+            .loader();
+        })
+    </script>
+    </body>
+
+</html>

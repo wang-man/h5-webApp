@@ -1,0 +1,15 @@
+/*loading动画样式*/
+html,body{ width: 100%; height: 100%;}
+.h5_loading{ width: 60px; height: 60px; position: relative;top: 50%; margin: -30px auto; }
+.h5_loading .bubble1,.h5_loading .bubble2{ width: 100%; height: 100%; background-color: #f4f; position: absolute;border-radius: 50%; opacity: 0.6}	/*这里必须要设置半透明，才可以看到两个交叉动作*/
+
+.h5_loading .bubble1{ -webkit-animation: bounce 2s infinite ease-in-out 0s; }
+.h5_loading .bubble2{ -webkit-animation: bounce 2s infinite ease-in-out -1s; }
+
+@-webkit-keyframes bounce{
+	0%,100%{ transform: scale(0) }
+	50%{ transform: scale(1) }
+}
+.h5_loading .rate{ top: 100%; position: relative; text-align: center; height: 20px; font-size: 14px; line-height: 20px; }
+
+

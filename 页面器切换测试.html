@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>界面全屏切换及动画测试</title>
+    <style type="text/css">
+        *{ padding: 0; margin: 0;}
+        body{ background: #ccc; }
+        .page-1 img{ width: 230px; height: 340px; }
+        .page-2 img{ width: 240px; height: 200px; }
+        .page-3 img{ width: 250px; height: 250px; }
+        .component{ display: none; }    /*先隐藏起来*/
+    </style>
+</head>
+    
+    <body>
+        <div id="pages">
+            <div class="section page page-1">
+                <div class="component">
+                    <img src="images/1819735724436395597.jpg" alt="">
+                </div>
+            </div>
+            <div class="section page page-2">
+                <div class="component">
+                    <img src="images/3906591201767484395.jpg" alt="">
+                </div>
+            </div>
+            <div class="section page page-3">
+                <div class="component">
+                    <img src="images/t017929b46baecc2cad.bmp" alt="">
+                </div>
+            </div>
+        </div>
+
+    <!-- 载入所有的组件资源 -->
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.fullPage.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#pages').fullpage({
+                //设置每一页背景颜色
+                "sectionsColor" : ["#ff2222", "#00ff00", "#254673"],    
+
+                //页面离开和进入的回调函数,插件中index从1开始计算
+                onLeave:function(index, nextIndex, direction) {     //滚动前
+                    $('#pages').find('.page').eq(index-1).trigger('leave'); //触发自定义leave事件
+                },
+                afterLoad:function(anchorLink , index) {            //滚动后
+                    $('#pages').find('.page').eq(index-1).trigger('enter');  //触发自定义的enter事件
+                },
+                // 页面结构生成的回调函数，解决第一屏图片无法淡入的问题
+                afterRender: function () {
+                    $('#pages').find('.page').eq(0).find('.component').fadeIn(1000);
+                    console.log('页面加载了')
+                    // debugger;
+                }
+            });
+
+            //下面就是自定义的事件 
+            $('.page').on("leave",function() {
+                $(this).find('.component').fadeOut("fast");
+            });
+            $('.page').on("enter",function() {
+                $(this).find('.component').fadeIn();
+            })
+
+        });
+    </script>
+    </body>
+
+</html>

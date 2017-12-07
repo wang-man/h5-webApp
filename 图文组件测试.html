@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>图文组件测试</title>
+
+    <!-- 载入所有的组件资源 -->
+    <style type="text/css">
+        *{ padding: 0; margin: 0;}
+        body{ background: #aaa; }
+        .ipone{ position: relative; }
+       .h5_component { background-repeat: no-repeat; background-size: 100%; position: absolute;}
+     
+    </style>
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+   
+</head>
+    
+    <body>
+        
+        <div class="ipone">
+            
+        </div>
+        <script type="text/javascript">
+            var H5ComponentBase = function( name, cfg) {
+                var cfg = cfg || {};
+                var id= ("h5_c_"+Math.random()).replace(".","_");   //replace方法是字符串的方法，所以前面的要加上括号
+                var cls = "h5_component_name_"+name+" h5_component"+cfg.type;
+                var component = $("<div class='h5_component "+cls+"' id='"+id+"'></div>");//创建一个元素节点
+                cfg.text && component.text(cfg.text); //如果有cfg中有text这个参数，那么。。。？这种写法是判断？
+                cfg.width && component.width(cfg.width/2);
+                cfg.height && component.height(cfg.height/2);
+                cfg.bag && component.css('backgroundImage', cfg.bag);
+                component.css({
+                    marginLeft: -cfg.width/4+"px",
+                    left: "50%",
+                    // transition: "all 0.5s"
+                });
+
+                component.on("leave",function() {
+                    $(this).addClass(cls+'_leave').removeClass(cls+'_enter');
+                    cfg.animateOut && $(this).animate(cfg.animateOut,500);
+                });
+                component.on("enter",function() {
+                    $(this).addClass(cls+'_enter').removeClass(cls+'_leave');
+                    cfg.animateIn && $(this).animate(cfg.animateIn,500);
+                })
+
+                return component;
+            };
+
+            var cfg = {
+                type: "base",
+                text: "文本内容测试",
+                width : 500,
+                height : 414,
+                bag : "url(images/3906591201767484395.jpg)",
+                animateIn: {top:0,opacity:1},
+                animateOut: {top:150,opacity:0}
+
+            };
+
+            var h5 = new H5ComponentBase( "myname", cfg); //构造函数，也是一个对象
+            $('.ipone').append(h5);
+
+
+            var leave = true;
+            $( ).click(function() {
+                leave = !leave;
+                $('.h5_component').trigger(leave ? "enter":"leave");
+            });
+
+
+        </script>
+    </body>
+
+</html>

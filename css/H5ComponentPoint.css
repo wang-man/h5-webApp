@@ -1,0 +1,4 @@
+/* 散点图组件样式 */
+.point{ border-radius: 50%;text-align: center; left: 0; top: 0; position: absolute; transition: all 1s;}
+.point_name{ position: absolute; width: 100%;text-align: center; height: 50px; top: 50%; margin-top: -25px; 
+	font-size: 16px; color: #fff;z-index: 2;}
