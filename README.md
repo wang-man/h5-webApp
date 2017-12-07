@@ -16,5 +16,5 @@
 ![加载动画](https://github.com/wang-man/h5-webApp/blob/master/images/1.png)
 ----------
 ### 首页
-![首页](https://github.com/wang-man/eeee/blob/https://github.com/wang-man/h5-webApp/blob/master/images/2.png)
+![首页](https://github.com/wang-man/h5-webApp/blob/master/images/2.png)
 ----------
